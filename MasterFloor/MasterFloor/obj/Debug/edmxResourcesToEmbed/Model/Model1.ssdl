@@ -48,7 +48,7 @@
     <Property Name="AdressCityId" Type="int" Nullable="false" />
     <Property Name="AdressStreetId" Type="int" Nullable="false" />
     <Property Name="AdressHouseNum" Type="int" Nullable="false" />
-    <Property Name="ITN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ITN" Type="nvarchar" MaxLength="50" />
     <Property Name="Rating" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PartnerType">

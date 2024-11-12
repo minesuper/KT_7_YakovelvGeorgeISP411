@@ -53,7 +53,7 @@
           <Property Name="AdressCityId" Type="int" Nullable="false" />
           <Property Name="AdressStreetId" Type="int" Nullable="false" />
           <Property Name="AdressHouseNum" Type="int" Nullable="false" />
-          <Property Name="ITN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ITN" Type="nvarchar" MaxLength="50" />
           <Property Name="Rating" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PartnerType">
@@ -292,7 +292,7 @@
           <Property Name="AdressCityId" Type="Int32" Nullable="false" />
           <Property Name="AdressStreetId" Type="Int32" Nullable="false" />
           <Property Name="AdressHouseNum" Type="Int32" Nullable="false" />
-          <Property Name="ITN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <NavigationProperty Name="City" Relationship="Self.FK_Partners_City" FromRole="Partners" ToRole="City" />
           <NavigationProperty Name="PartnerName" Relationship="Self.FK_Partners_PartnerName" FromRole="Partners" ToRole="PartnerName" />

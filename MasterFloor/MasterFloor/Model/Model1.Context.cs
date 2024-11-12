@@ -20,7 +20,6 @@ namespace MasterFloor.Model
             : base("name=MasterFloorDBEntities")
         {
         }
-    
         public static MasterFloorDBEntities GetContext()
         {
             if (_context == null)
@@ -29,6 +28,7 @@ namespace MasterFloor.Model
             }
             return _context;
         }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

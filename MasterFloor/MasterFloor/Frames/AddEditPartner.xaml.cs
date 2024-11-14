@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MasterFloor.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,12 @@ namespace MasterFloor.Frames
         bool IsAdding { get; set; }
         Model.MasterFloorDBEntities Context = Model.MasterFloorDBEntities.GetContext();
         Model.Partners CurrentPartner { get; set; }
-        public AddEditPartner(Model.Partners SelectedParner)
+        public AddEditPartner(PartnersWithDiscount SelectedParner)
         {
             InitializeComponent();
             OnStart(SelectedParner);
         }
-        private void OnStart(Model.Partners SelectedPartner)
+        private void OnStart(PartnersWithDiscount SelectedPartner)
         {
             if (SelectedPartner == null)
             {
@@ -38,14 +39,15 @@ namespace MasterFloor.Frames
             else
             {
                 IsAdding = false;
-                DataContext = SelectedPartner;
-                CurrentPartner = SelectedPartner;
+                CurrentPartner = Context.Partners.Where(d => d.Id == SelectedPartner.Id).FirstOrDefault();
+                DataContext = CurrentPartner;
                 NameTextBox.Text = SelectedPartner.PartnerName.Name;
                 TypeComboBox.SelectedIndex = SelectedPartner.PartnerTypeId - 1;
                 RatingTextBox.Text = SelectedPartner.Rating.ToString();
-                AdressTextBox.Text = $"{SelectedPartner.AdressIndex}, {SelectedPartner.Region.Name}, " +
+                AdressTextBox.Text = $"{SelectedPartner.AdressIndex}, {SelectedPartner.Region.Name}, "+
                     $"{SelectedPartner.City.Name}, {SelectedPartner.Street.Name}, {SelectedPartner.AdressHouseNum}";
-                FIOTextBox.Text = $"{SelectedPartner.DirectorSurname} {SelectedPartner.DirectorName} {SelectedPartner.DirectorPatronym}";
+                FIOTextBox.Text = $"{SelectedPartner.DirectorSurname} "+
+                    $"{SelectedPartner.DirectorName} {SelectedPartner.DirectorPatronym}";
                 PhoneTextBox.Text = SelectedPartner.Phone;
                 EmailTextBox.Text = SelectedPartner.Email;
             }
@@ -71,7 +73,8 @@ namespace MasterFloor.Frames
                 string FIOFull = FIOTextBox.Text.Trim();
                 string Phone = PhoneTextBox.Text;
                 string Email = EmailTextBox.Text;
-                string AdressIndex = "", AdressRegion = "", AdressCity = "", AdressStreet = "", AdressHouseNum = "";
+                string AdressIndex = "", AdressRegion = "", AdressCity = "",
+                    AdressStreet = "", AdressHouseNum = "";
                 if (string.IsNullOrEmpty(Name))
                 {
                     errors.AppendLine("Заполните имя поставщика");

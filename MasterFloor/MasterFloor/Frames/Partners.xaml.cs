@@ -32,37 +32,15 @@ namespace MasterFloor.Frames
             List<PartnersWithDiscount> partnersWithDiscounts = new List<PartnersWithDiscount>();
             List<Model.Partners> partners = Model.MasterFloorDBEntities.GetContext().Partners.ToList();
             foreach (var partner in partners)
-            {
-                PartnersWithDiscount newPartner = new PartnersWithDiscount();
-                newPartner.AdressCityId = partner.AdressCityId;
-                newPartner.AdressHouseNum = partner.AdressHouseNum;
-                newPartner.AdressIndex = partner.AdressIndex;
-                newPartner.AdressRegionId = partner.AdressRegionId;
-                newPartner.AdressStreetId = partner.AdressStreetId;
-                newPartner.City = partner.City;
-                newPartner.DirectorName = partner.DirectorName;
-                newPartner.DirectorPatronym = partner.DirectorPatronym;
-                newPartner.DirectorSurname = partner.DirectorSurname;
-                newPartner.Email = partner.Email;
-                newPartner.Id = partner.Id;
-                newPartner.ITN = partner.ITN;
-                newPartner.PartnerName = partner.PartnerName;
-                newPartner.PartnerNameId = partner.PartnerNameId;
-                newPartner.PartnerProduct = partner.PartnerProduct;
-                newPartner.PartnerType = partner.PartnerType;
-                newPartner.PartnerTypeId = partner.PartnerTypeId;
-                newPartner.Phone = partner.Phone;
-                newPartner.Rating = partner.Rating;
-                newPartner.Region = partner.Region;
-                newPartner.Street = partner.Street;
-                partnersWithDiscounts.Add(newPartner);
+            {                
+                partnersWithDiscounts.Add(new PartnersWithDiscount(partner));
             }
-            PartnersListView.ItemsSource = partners.ToList();
+            PartnersListView.ItemsSource = partnersWithDiscounts.ToList();
         }
 
         private void EditPartnerButton_Click(object sender, RoutedEventArgs e)
         {
-            Classes.Navigation.ActiveFrame.Navigate(new Frames.AddEditPartner((sender as Button).DataContext as Model.Partners));
+            Classes.Navigation.ActiveFrame.Navigate(new Frames.AddEditPartner((sender as Button).DataContext as PartnersWithDiscount));
         }
 
         private void ViewPartnerHistoryButton_Click(object sender, RoutedEventArgs e)

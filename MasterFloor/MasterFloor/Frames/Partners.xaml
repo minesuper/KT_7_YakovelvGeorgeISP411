@@ -27,20 +27,23 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Vertical" Grid.Column="0">
                                 <TextBlock FontSize="16" TextWrapping="Wrap">
-                                <Run Text="{Binding PartnerType.Name}"></Run>
-                                <Run Text=" | "></Run>
-                                <Run Text="{Binding PartnerName.Name}"></Run>
+                                    <Run Text="{Binding PartnerType.Name}"></Run>
+                                    <Run Text=" | "></Run>
+                                    <Run Text="{Binding PartnerName.Name}"></Run>
                                 </TextBlock>
                                 <TextBlock TextWrapping="Wrap">
-                                <Run Text="{Binding DirectorSurname}"></Run>
-                                <Run Text="{Binding DirectorName}"></Run>
-                                <Run Text="{Binding DirectorPatronym}"></Run>
+                                    <Run Text="{Binding DirectorSurname}"></Run>
+                                    <Run Text="{Binding DirectorName}"></Run>
+                                    <Run Text="{Binding DirectorPatronym}"></Run>
                                 </TextBlock>
                                 <TextBlock Text="{Binding Phone, StringFormat=+7 {0}}" TextWrapping="Wrap"></TextBlock>
                                 <TextBlock Text="{Binding Rating, StringFormat=Рейтинг: {0}}" TextWrapping="Wrap"></TextBlock>
                             </StackPanel>
-                            <TextBlock Text="0%" Grid.Column="1"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Column="1"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Run Text="{Binding Discount}"></Run>
+                                <Run Text="%"></Run>
+                            </TextBlock>
                             <Button x:Name="EditPartnerButton" Content="Редактировать"
                                     Grid.Column="2" Margin="10" Click="EditPartnerButton_Click"></Button>
                             <Button x:Name="ViewPartnerHistoryButton" Content="История"

@@ -53,6 +53,6 @@ C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\D
 C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.Properties.Resources.resources
 C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.csproj.GenerateResource.cache
 C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.csproj.CoreCompileInputs.cache
-C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFl.AFE6D08C.Up2Date
 C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.exe
 C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.pdb
+C:\Users\comcuru\Desktop\KT_7_YakovelvGeorgeISP411\MasterFloor\MasterFloor\obj\Debug\MasterFloor.csproj.CopyComplete

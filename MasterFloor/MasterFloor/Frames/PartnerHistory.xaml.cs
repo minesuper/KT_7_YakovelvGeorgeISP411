@@ -27,8 +27,19 @@ namespace MasterFloor.Frames
         }
         private void OnStart(Model.Partners SelectedPartner)
         {
-            HistoryListView.ItemsSource = Model.MasterFloorDBEntities.GetContext().PartnerProduct
+            var Sales = Model.MasterFloorDBEntities.GetContext().PartnerProduct
                 .Where(d => d.PartnerId == SelectedPartner.Id).ToList();
+            HistoryListView.ItemsSource = Sales;
+            if (Sales.Count() != 0)
+            {
+                EmptyText.Visibility = Visibility.Hidden;
+                HistoryListView.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                EmptyText.Visibility = Visibility.Visible;
+                HistoryListView.Visibility = Visibility.Hidden;
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

@@ -13,7 +13,9 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="HistoryListView" Width="800" HorizontalAlignment="Center"
+        <Label Content="История реализации пуста" HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="32" FontWeight="Bold" Visibility="Hidden" x:Name="EmptyText"></Label>
+        <ListView x:Name="HistoryListView" Width="800" HorizontalAlignment="Center" Visibility="Visible"
                   HorizontalContentAlignment="Center" Grid.Row="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
